@@ -66,6 +66,67 @@ public void setImagen(ImageIcon imagen) {
         }
     }
 }
+
+public void setPerfilVisible(boolean visible) {
+        this.imagenVisible = visible;
+        
+        if (visible) {
+            if (imagenPerfil != null) {
+                imagenPanel.setImagen(imagenPerfil);
+            }
+        } else {
+            imagenPanel.ocultarImagen();
+        }
+        
+        if (itemOcultarImagen != null) {
+            itemOcultarImagen.setText(visible ? "Ocultar imagen perfil" : "Mostrar imagen perfil");
+        }
+        
+        imagenPanel.setVisible(visible);
+        
+        revalidate();
+        repaint();
+    }
+    
+    public void setFondoVisible(boolean visible) {
+        this.fondoVisible = visible;
+        
+        if (itemOcultarFondo != null) {
+            itemOcultarFondo.setText(visible ? "Ocultar fondo" : "Mostrar fondo");
+        }
+        
+        panelSuperior.repaint();
+    }
+    
+    public void setPanelSuperiorVisible(boolean visible) {
+        this.panelSuperiorVisible = visible;
+        panelSuperior.setVisible(visible);
+        
+        if (!visible) {
+            setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT - HEADER_HEIGHT));
+            setMaximumSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT - HEADER_HEIGHT));
+            setMinimumSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT - HEADER_HEIGHT));
+        } else {
+            setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+            setMaximumSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+            setMinimumSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+        }
+        
+        revalidate();
+        repaint();
+    }
+    
+    public void setColorFondo(Color color) {
+        this.colorFondo = color;
+        if (fondoPersonalizado == null || !fondoVisible) {
+            panelSuperior.setBackground(color);
+        }
+        panelSuperior.repaint();
+    }
+    
+    public Color getColorFondo() {
+        return this.colorFondo;
+    }
 ```
 - Método para cargar datos desde una lista
 ```bash
