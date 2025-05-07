@@ -151,7 +151,7 @@ El componente ya incluye las siguientes interacciones:
 ##  Requisitos mínimos
 
 - Java 8 o superior.
-- IDE como NetBeans, IntelliJ o Eclipse.
+- IDE como NetBeans 25, IntelliJ o Eclipse.
 - No se requiere conexión a internet ni librerías externas.
 
 ---
