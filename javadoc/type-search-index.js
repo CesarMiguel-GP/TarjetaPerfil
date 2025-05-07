@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"componente","l":"TarjetaPerfil"}];updateSearchResults();
